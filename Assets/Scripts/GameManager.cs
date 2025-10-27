@@ -27,7 +27,7 @@ public class GameManager : BaseManager<GameManager>
     {
         Debug.Log("[Game] 进入游戏");
 
-        SceneLoader.Instance.LoadScene("MainMenu", MainMenu);
+        //SceneLoader.Instance.LoadScene("MainMenu", MainMenu);
     }
 
     public void MainMenu()
@@ -51,7 +51,7 @@ public class GameManager : BaseManager<GameManager>
         
         // 读取保存的场景名
         var sceneName = DataManager.Instance.GetCurrentSceneName();
-        SceneLoader.Instance.LoadScene(sceneName);
+        //SceneLoader.Instance.LoadScene(sceneName);
         
         // todo fix
         //CheckHaveSyringe();
@@ -65,7 +65,7 @@ public class GameManager : BaseManager<GameManager>
         DataUtility.ClearSave();
         DataManager.Instance.OnReset();
         Time.timeScale = 1;
-        SceneLoader.Instance.LoadScene("MainMenu", MainMenu);
+        //ceneLoader.Instance.LoadScene("MainMenu", MainMenu);
     }
 
     public void QuitGame()
@@ -93,15 +93,5 @@ public class GameManager : BaseManager<GameManager>
         CurrentState = GameState.Playing;
         Time.timeScale = 1f;
         UIManager.Instance.Hide("Start");
-    }
-
-    public void SwitchCurrentSceneWorld()
-    {
-        SceneLoader.Instance.GetCurrentSceneHandler()?.SwitchWorldWithEffects();
-    }
-
-    public void SetPostProcessingVolume(bool show)
-    {
-        postProcessingVolume.SetActive(show);
     }
 }

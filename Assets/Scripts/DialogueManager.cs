@@ -10,7 +10,7 @@ public class DialogueManager : BaseManager<DialogueManager>
     public void StartDialogue(Dialogues dialogues, System.Action onComplete = null)
     {
         _currentDialogueUI = UIManager.Instance.Show("Dialogue").GetComponent<DialogueUI>();
-        CharacterManager.Instance.HideCharacter();
+        //CharacterManager.Instance.HideCharacter();
         _currentDialogueUI.StartDialogue(dialogues, onComplete);
     }
 
@@ -19,6 +19,6 @@ public class DialogueManager : BaseManager<DialogueManager>
     {
         
         UIManager.Instance.Hide("Dialogue");
-        CharacterManager.Instance.ShowCharacter();
+        //CharacterManager.Instance.ShowCharacter();
     }
 }

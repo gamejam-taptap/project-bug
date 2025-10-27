@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using TMPro;
 
 public class NotificationManager : BaseManager<NotificationManager>
 {
@@ -8,7 +7,6 @@ public class NotificationManager : BaseManager<NotificationManager>
 
     [Header("UI Components")]
     public GameObject notificationPanel;
-    public TextMeshProUGUI notificationText;
     public CanvasGroup canvasGroup;
     public float displayDuration = 2f;
 
@@ -27,7 +25,7 @@ public class NotificationManager : BaseManager<NotificationManager>
 
     private IEnumerator ShowNotificationCoroutine(string message)
     {
-        notificationText.text = message;
+        //notificationText.text = message;
         notificationPanel.SetActive(true);
         canvasGroup.alpha = 1f;
 

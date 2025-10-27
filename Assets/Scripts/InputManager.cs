@@ -1,4 +1,4 @@
-using UnityEngine.InputSystem;
+using UnityEngine;
 
 public class InputManager : BaseManager<InputManager>
 {
@@ -10,7 +10,7 @@ public class InputManager : BaseManager<InputManager>
     private void Update()
     {
         // 检测 Esc 键切换暂停状态
-        if(Keyboard.current.escapeKey.wasPressedThisFrame)
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
         }
