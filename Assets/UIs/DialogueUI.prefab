@@ -553,7 +553,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -2157729866610553877}
         m_TargetAssemblyTypeName: DialogueUI, Assembly-CSharp
-        m_MethodName: DisplayNextSentence
+        m_MethodName: ClickToNext
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

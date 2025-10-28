@@ -29,6 +29,7 @@ public class GameManager : BaseManager<GameManager>
         CurrentState = GameState.MainMenu;
         Time.timeScale = 1;
         UIManager.Instance.Show("Start");
+        AudioManager.Instance.PlayBGM("start");
     }
     
     public void StartGame()

@@ -1,22 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : BaseManager<AudioManager>
 {
-    public static AudioManager Instance;
+    [Serializable]
+    public class AudioClips
+    {
+        public string name;
+        public AudioClip clip;
+    }
 
     [Header("BGM")]
     public AudioSource bgmSource;
-    public List<AudioClip> bgmClips;
+    public List<AudioClips> bgmClips;
 
     [Header("SFX")]
     public AudioSource sfxSource;
-    public List<AudioClip> sfxClips;
+    public List<AudioClips> sfxClips;
 
     [Header("Loop SFX")]
     public AudioSource loopSfxSource;
-    public List<AudioClip> loopSfxClips;
+    public List<AudioClips> loopSfxClips;
 
     private Dictionary<string, AudioClip> _bgmDict = new();
     private Dictionary<string, AudioClip> _sfxDict = new();
@@ -24,23 +30,34 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
+        SetDoNotDestroyOnLoad();
+    }
+    
+    private void Start()
+    {
+        foreach (var clip in bgmClips)
         {
-            Destroy(gameObject);
-            return;
+            if (clip != null && clip.clip != null)
+            {
+                _bgmDict[clip.name] = clip.clip;
+            }
+        }
+        
+        foreach (var clip in sfxClips)
+        {
+            if (clip != null && clip.clip != null)
+            {
+                _sfxDict[clip.name] = clip.clip;
+            }
         }
 
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        foreach (var clip in bgmClips)
-            _bgmDict[clip.name] = clip;
-
-        foreach (var clip in sfxClips)
-            _sfxDict[clip.name] = clip;
-
         foreach (var clip in loopSfxClips)
-            _loopSfxDict[clip.name] = clip;
+        {
+            if (clip != null && clip.clip != null)
+            {
+                _loopSfxDict[clip.name] = clip.clip;
+            }
+        }
     }
 
     public void PlayBGM(string name, bool loop = true, float fadeTime = 1f)

@@ -1,3 +1,4 @@
+using Managers;
 using UnityEngine;
 
 public class Level0 : MonoBehaviour
@@ -11,6 +12,6 @@ public class Level0 : MonoBehaviour
 
     private void OnComplete()
     {
-        
+        LevelManager.Instance.Load("level1");
     }
 }

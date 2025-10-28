@@ -33,8 +33,14 @@ public class DialogueUI : MonoBehaviour
 
         DisplayNextSentence();
     }
+
+    public void ClickToNext()
+    {
+        AudioManager.Instance.PlaySFX("click");
+        DisplayNextSentence();
+    }
     
-    public void DisplayNextSentence()
+    private void DisplayNextSentence()
     {
         if (_isTyping) return;
 
