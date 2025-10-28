@@ -12,7 +12,6 @@ public class Level0 : MonoBehaviour
 
     private void OnComplete()
     {
-        AudioManager.Instance.StopBGM();
         AudioManager.Instance.PlaySFX("cut-scene");
         LevelManager.Instance.Load("Level1");
     }

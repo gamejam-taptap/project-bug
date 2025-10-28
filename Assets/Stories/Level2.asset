@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b3a3106ee24bc5886ba21609233ee7, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  storyList:
+  - shot: {fileID: -3698137616497008740, guid: b9ed86f21a7f81c4a8f9c752f22551e5, type: 3}
+    needBlackBg: 1
+    needWhiteBg: 0
+    announcement: 
+  - shot: {fileID: 3200609099574947422, guid: b9ed86f21a7f81c4a8f9c752f22551e5, type: 3}
+    needBlackBg: 1
+    needWhiteBg: 0
+    announcement: 
+  - shot: {fileID: -7903906826664095315, guid: b9ed86f21a7f81c4a8f9c752f22551e5, type: 3}
+    needBlackBg: 1
+    needWhiteBg: 0
+    announcement: 
+  - shot: {fileID: 8256244478277776491, guid: b9ed86f21a7f81c4a8f9c752f22551e5, type: 3}
+    needBlackBg: 1
+    needWhiteBg: 0
+    announcement: 

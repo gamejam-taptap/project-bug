@@ -9,7 +9,7 @@ public class DialogueUI : MonoBehaviour
     public Text dialogueText;
     public Text nameText;
     public Image avatarImage;
-    //public Image image;
+    public Image bgImage;
     public float typingSpeed = 0.05f;
 
     private Queue<Dialogue> _dialogues;
@@ -70,15 +70,15 @@ public class DialogueUI : MonoBehaviour
             avatarImage.gameObject.SetActive(false);
         }
 
-        // if (dialogue.image)
-        // {
-        //     image.gameObject.SetActive(true);
-        //     image.sprite = dialogue.image;
-        // }
-        // else
-        // {
-        //     image.gameObject.SetActive(false);
-        // }
+        if (dialogue.image)
+        {
+            bgImage.color = new Color(1, 1, 1, 1);
+            bgImage.sprite = dialogue.image;
+        }
+        else
+        {
+            bgImage.color = new Color(1, 1, 1, 0);
+        }
     }
 
     private IEnumerator TypeSentence(string sentence)
