@@ -40,7 +40,7 @@ public class GameManager : BaseManager<GameManager>
         Time.timeScale = 1;
         UIManager.Instance.Hide("Start");
 
-        LevelManager.Instance.Load("Level0");
+        LevelManager.Instance.Load("Level1");
     }
 
     public void ResetGame()

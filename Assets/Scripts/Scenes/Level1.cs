@@ -10,7 +10,7 @@ namespace Scenes
         public void Start()
         {
             AudioManager.Instance.PlayBGM("level1");
-            DialogueManager.Instance.StartDialogue(dialogueStart, OnComplete);
+            //DialogueManager.Instance.StartDialogue(dialogueStart, OnComplete);
         }
 
         private void OnComplete()
